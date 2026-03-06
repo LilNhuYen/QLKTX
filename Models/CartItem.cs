@@ -1,4 +1,5 @@
 public class CartItem
+// Thông tin xe trong giỏ hàng
 {
     public int ProductId { get; set; }
 
