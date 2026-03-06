@@ -1,0 +1,29 @@
+@model QLKTX.Models.Cart
+
+<h2>Giỏ hàng</h2>
+
+<table border="1">
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Số lượng</th>
+        <th>Tổng</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Items)
+{
+    <tr>
+        <td>@item.ProductName</td>
+        <td>@item.Price</td>
+        <td>@item.Quantity</td>
+        <td>@(item.Price * item.Quantity)</td>
+        <td>
+            <a href="/Cart/Remove?id=@item.ProductId">Xóa</a>
+        </td>
+    </tr>
+}
+
+</table>
+
+<h3>Tổng tiền: @Model.GetTotal()</h3>
